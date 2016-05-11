@@ -9,13 +9,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.zengfeng.zfandroidframework.R;
 import com.example.zengfeng.zfandroidframework.base.BaseActivity;
 import com.example.zengfeng.zfandroidframework.base.BaseView;
+import com.example.zengfeng.zfandroidframework.base.Constant;
+import com.jakewharton.rxbinding.view.RxView;
+
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rx.functions.Action1;
 
 public class MainActivity extends BaseActivity implements MainView{
     /**
@@ -40,6 +46,16 @@ public class MainActivity extends BaseActivity implements MainView{
     @Override
     public void initView() {
         toolbar.setTitle(TITLE);
+        RxView.clicks(toolbar)
+                .throttleFirst(Constant.CLICK_INTERVAL, TimeUnit.MILLISECONDS)
+                .subscribe(new Action1<Void>() {
+                    @Override
+                    public void call(Void aVoid) {
+                        showShortToast(toolbar.getTitle());
+                    }
+                });
+
+
     }
 
     @Override
