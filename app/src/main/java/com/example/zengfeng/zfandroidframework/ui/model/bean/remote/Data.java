@@ -1,4 +1,4 @@
-package com.example.zengfeng.zfandroidframework.model.bean.remote;
+package com.example.zengfeng.zfandroidframework.ui.model.bean.remote;
 
 /**
  * 远端数据实体类

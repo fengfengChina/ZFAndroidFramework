@@ -1,19 +1,13 @@
-package com.example.zengfeng.zfandroidframework.view;
+package com.example.zengfeng.zfandroidframework.ui.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.zengfeng.zfandroidframework.R;
 import com.example.zengfeng.zfandroidframework.base.BaseActivity;
-import com.example.zengfeng.zfandroidframework.base.BaseView;
 import com.example.zengfeng.zfandroidframework.base.Constant;
 import com.jakewharton.rxbinding.view.RxView;
 

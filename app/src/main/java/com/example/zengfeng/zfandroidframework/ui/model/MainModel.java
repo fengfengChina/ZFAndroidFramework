@@ -1,4 +1,4 @@
-package com.example.zengfeng.zfandroidframework.model;
+package com.example.zengfeng.zfandroidframework.ui.model;
 
 /**
  * Created by zengfeng on 5/10/16.

@@ -1,4 +1,4 @@
-package com.example.zengfeng.zfandroidframework.view;
+package com.example.zengfeng.zfandroidframework.ui.activity;
 
 import com.example.zengfeng.zfandroidframework.base.BaseView;
 

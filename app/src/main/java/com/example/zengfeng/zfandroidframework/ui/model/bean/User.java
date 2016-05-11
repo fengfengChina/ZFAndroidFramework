@@ -1,4 +1,4 @@
-package com.example.zengfeng.zfandroidframework.model.bean;
+package com.example.zengfeng.zfandroidframework.ui.model.bean;
 
 /**
  * app 登陆后台保存的class
