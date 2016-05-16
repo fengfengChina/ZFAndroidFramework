@@ -7,6 +7,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * Created by zengfeng on 5/11/16.
@@ -14,7 +15,7 @@ import retrofit2.http.Path;
 public interface ApiServices {
 
     @GET("users/{user}/repos")
-    Call<List<User>> listRepos(@Path("user") String user);
+    Call<User> login(@Query("userName")String user,@Query("password") String password);
 
 
 }

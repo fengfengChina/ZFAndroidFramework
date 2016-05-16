@@ -10,6 +10,6 @@ import java.util.List;
  */
 public interface LoginPresenter extends BasePresenter {
 
-    void login();
+    void login(String userName , String password);
 
 }
