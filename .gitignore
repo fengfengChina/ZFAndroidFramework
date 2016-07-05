@@ -38,3 +38,7 @@ proguard/
 
 # Android Studio captures folder
 captures/
+
+.idea/dbnavigator.xml
+.idea/
+
