@@ -1,4 +1,4 @@
-package com.example.zengfeng.zfandroidframework;
+package com.zero.android.zfandroidframework;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
