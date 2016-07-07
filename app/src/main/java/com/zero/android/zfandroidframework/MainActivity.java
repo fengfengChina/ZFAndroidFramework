@@ -1,13 +1,35 @@
 package com.zero.android.zfandroidframework;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.zero.android.zfandroidframework.common.BaseActivity;
+
+/**
+ *
+ * @author zf
+ *
+ */
+public class MainActivity extends BaseActivity {
+
+    Handler handler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message msg) {
+            Toast.makeText(getContext(),"this is my handler...",Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    });
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public int getLayoutInflaterView() {
+        return R.layout.activity_main;
     }
+
+    @Override
+    public void initView() {
+
+    }
+
+
 }
