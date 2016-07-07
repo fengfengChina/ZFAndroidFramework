@@ -1,7 +1,7 @@
-package com.zero.android.zfandroidframework.present;
+package com.zero.android.present;
 
-import com.zero.android.zfandroidframework.common.BasePresent;
-import com.zero.android.zfandroidframework.common.Result;
+import com.zero.android.common.BasePresent;
+import com.zero.android.common.Result;
 
 /**
  * Created by zengfeng on 16/7/6.

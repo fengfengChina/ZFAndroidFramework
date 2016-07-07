@@ -1,13 +1,13 @@
-package com.zero.android.zfandroidframework.view;
+package com.zero.android.view;
 
 import android.os.Handler;
 import android.os.Message;
 import android.widget.Toast;
 
+import com.zero.android.common.BaseActivity;
+import com.zero.android.common.Result;
+import com.zero.android.present.MainPresent;
 import com.zero.android.zfandroidframework.R;
-import com.zero.android.zfandroidframework.common.BaseActivity;
-import com.zero.android.zfandroidframework.common.Result;
-import com.zero.android.zfandroidframework.present.MainPresent;
 
 /**
  *
