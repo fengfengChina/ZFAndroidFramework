@@ -1,4 +1,4 @@
-package com.zero.android.zfandroidframework.common;
+package com.zero.android.common;
 
 import android.content.Context;
 import android.os.Bundle;

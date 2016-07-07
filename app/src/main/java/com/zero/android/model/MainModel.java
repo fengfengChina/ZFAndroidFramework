@@ -1,4 +1,4 @@
-package com.zero.android.zfandroidframework.model;
+package com.zero.android.model;
 
 /**
  * Created by zengfeng on 16/7/6.
