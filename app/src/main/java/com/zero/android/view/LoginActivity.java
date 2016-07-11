@@ -1,17 +1,17 @@
 package com.zero.android.view;
 
 import com.zero.android.common.BaseActivity;
-import com.zero.android.present.MainPresent;
+import com.zero.android.present.LoginPresent;
 
 /**
  *
  * @author zf
  *
  */
-public class MainActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity {
     private static int RESULT_NUM = 1001;
 
-    private MainPresent mainPresent;
+    private LoginPresent loginPresent;
 
     @Override
     public int getLayoutInflaterView() {
@@ -20,12 +20,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        mainPresent = new MainPresent();
+        loginPresent = new LoginPresent();
     }
 
     @Override
     public void initPresenter() {
-        setPresent(new MainPresent());
+        setPresent(new LoginPresent());
     }
 
 
