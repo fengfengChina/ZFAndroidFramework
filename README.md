@@ -12,3 +12,5 @@ base on android mvp,use rxjava java8 rxAndroid rxbus rxbinding.and a lot of util
 [rxAndroid](https://github.com/ReactiveX/RxAndroid)
 
 [rxjava](https://github.com/ReactiveX/RxJava)
+
+[rxBinding](https://github.com/JakeWharton/RxBinding)
