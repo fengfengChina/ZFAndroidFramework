@@ -1,5 +1,6 @@
 package com.zero.android.view;
 
+import com.zero.android.R;
 import com.zero.android.common.BaseActivity;
 import com.zero.android.common.BasePresent;
 import com.zero.android.constact.LoginConstact;
@@ -17,7 +18,7 @@ public class LoginActivity extends BaseActivity implements LoginConstact.View{
 
     @Override
     public int getLayoutInflaterView() {
-        return 0;
+        return R.layout.activity_login;
     }
 
     @Override
