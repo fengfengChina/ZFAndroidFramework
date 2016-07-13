@@ -1,6 +1,7 @@
 package com.zero.android.view;
 
-import com.zero.android.common.BaseActivity;
+import android.support.v7.app.AppCompatActivity;
+
 import com.zero.android.present.MainPresent;
 
 /**
@@ -8,25 +9,11 @@ import com.zero.android.present.MainPresent;
  * @author zf
  *
  */
-public class MainActivity extends BaseActivity {
+public class MainActivity extends AppCompatActivity  {
     private static int RESULT_NUM = 1001;
 
     private MainPresent mainPresent;
 
-    @Override
-    public int getLayoutInflaterView() {
-        return 0;
-    }
-
-    @Override
-    public void initView() {
-        mainPresent = new MainPresent();
-    }
-
-    @Override
-    public void initPresenter() {
-        setPresent(new MainPresent());
-    }
 
 
 }
