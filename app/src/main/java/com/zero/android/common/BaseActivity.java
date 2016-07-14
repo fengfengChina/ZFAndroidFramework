@@ -26,7 +26,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public abstract void initView();
 
-    public abstract void initPresenter();
 
     public Context getContext() {
         return this;
