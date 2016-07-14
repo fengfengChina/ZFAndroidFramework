@@ -5,5 +5,4 @@ package com.zero.android.common;
  */
 public interface BaseView<T> {
 
-    void setPresenter(T presenter);
 }
