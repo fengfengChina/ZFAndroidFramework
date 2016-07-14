@@ -16,7 +16,6 @@ public interface LoginConstact {
 
     public interface Presenter extends BasePresent{
         void loginTask(String username,String password);
-
     }
 
 }
