@@ -6,7 +6,15 @@ package com.zero.android.entity;
 public class User {
     String status;
     String msg;
-    Object data;
+    UserInfo data;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getMsg() {
         return msg;
@@ -16,19 +24,13 @@ public class User {
         this.msg = msg;
     }
 
-    public Object getData() {
+    public UserInfo getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(UserInfo data) {
         this.data = data;
     }
 
-    public String getStatus() {
-        return status;
-    }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }
