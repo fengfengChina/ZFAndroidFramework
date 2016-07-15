@@ -8,5 +8,5 @@ public interface OnLoginListner {
 
     public void onPasswordError();
 
-    public void onSuccess();
+    public void onSuccess(String userName );
 }
