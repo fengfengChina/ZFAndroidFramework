@@ -4,22 +4,31 @@ package com.zero.android.entity;
  * Created by zengfeng on 16/7/13.
  */
 public class User {
-    String userName;
-    String password;
+    String status;
+    String msg;
+    Object data;
 
-    public String getUserName() {
-        return userName;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
-    public String getPassword() {
-        return password;
+    public Object getData() {
+        return data;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setData(Object data) {
+        this.data = data;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

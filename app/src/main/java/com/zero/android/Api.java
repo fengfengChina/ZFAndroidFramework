@@ -1,10 +1,11 @@
 package com.zero.android;
 
-import okhttp3.ResponseBody;
-import retrofit2.Call;
+import com.zero.android.entity.User;
+
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
+import rx.Observable;
 
 /**
  * Created by zengfeng on 16/7/13.
@@ -12,6 +13,6 @@ import retrofit2.http.POST;
 public interface Api {
     @FormUrlEncoded
     @POST("api/user/login")
-    Call<ResponseBody> login(@Field(value = "mobilePhone") String userName , @Field(value = "password") String password);
+    Observable<User> login(@Field(value = "mobilePhone") String userName , @Field(value = "password") String password);
 
 }
