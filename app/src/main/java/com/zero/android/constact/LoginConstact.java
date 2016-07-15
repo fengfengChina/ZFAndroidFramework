@@ -2,7 +2,6 @@ package com.zero.android.constact;
 
 import com.zero.android.common.BasePresent;
 import com.zero.android.common.BaseView;
-import com.zero.android.entity.User;
 
 /**
  * Created by zengfeng on 16/7/10.
@@ -17,7 +16,6 @@ public interface LoginConstact {
 
     public interface Presenter extends BasePresent{
         void loginTask(String username,String password);
-
     }
 
 }

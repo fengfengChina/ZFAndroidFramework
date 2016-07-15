@@ -46,8 +46,8 @@ public class LoginPresent implements LoginConstact.Presenter ,OnLoginListner{
     }
 
     @Override
-    public void onSuccess() {
+    public void onSuccess(String username) {
         view.dismissLoading();
-        view.showLoginSuccess("zengfeng");
+        view.showLoginSuccess(username);
     }
 }
