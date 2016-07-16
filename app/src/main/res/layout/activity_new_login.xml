@@ -13,13 +13,8 @@
         android:layout_height="wrap_content"
         android:text="PhoneNumber"
         android:id="@+id/textView3"
-        app:layout_constraintLeft_toLeftOf="@+id/constraintLayout"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
-        android:layout_marginTop="256dp"
-        tools:layout_constraintTop_creator="1"/>
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="208dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,18 +31,13 @@
 
     <EditText
         android:id="@+id/et_login_password"
-        android:layout_width="0dp"
+        android:layout_width="231dp"
         android:layout_height="40dp"
         android:inputType="text"
         android:hint="请输入密码"
         style="@android:style/Widget.Holo.Light.EditText"
-        app:layout_constraintLeft_toLeftOf="@+id/et_login_username"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintTop_toBottomOf="@+id/et_login_username"
-        android:layout_marginTop="18dp"
-        tools:layout_constraintTop_creator="1"
-        app:layout_constraintRight_toRightOf="@+id/et_login_username"
-        tools:layout_constraintRight_creator="1"/>
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="250dp"/>
 
 
     <EditText
