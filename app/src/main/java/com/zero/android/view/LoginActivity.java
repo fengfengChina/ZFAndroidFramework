@@ -1,9 +1,7 @@
 package com.zero.android.view;
 
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.zero.android.R;
@@ -21,19 +19,18 @@ public class LoginActivity extends BaseActivity implements LoginConstact.View {
 
     private EditText    etLoginUserName;
     private EditText    etLoginPassword;
-    private ProgressBar pbLogin;
     private Button      btnLogin;
 
     @Override
     public int getLayoutInflaterView() {
-        return R.layout.activity_login;
+        return R.layout.activity_new_login;
     }
 
     @Override
     public void initView() {
         etLoginUserName = (EditText) findViewById(R.id.et_login_username);
         etLoginPassword = (EditText) findViewById(R.id.et_login_password);
-        pbLogin = (ProgressBar) findViewById(R.id.pb_login);
+
         btnLogin = (Button) findViewById(R.id.btn_login);
         String userName = etLoginUserName.getText().toString();
         String password = etLoginPassword.getText().toString();
@@ -50,7 +47,7 @@ public class LoginActivity extends BaseActivity implements LoginConstact.View {
 
     @Override
     public void showLoading() {
-        pbLogin.setVisibility(View.VISIBLE);
+        Toast.makeText(this,"loading",Toast.LENGTH_LONG).show();
     }
 
 
@@ -61,7 +58,7 @@ public class LoginActivity extends BaseActivity implements LoginConstact.View {
 
     @Override
     public void dismissLoading() {
-        pbLogin.setVisibility(View.GONE);
+        Toast.makeText(this, "dialog is dismiss" , Toast.LENGTH_LONG).show();
     }
 
 
