@@ -13,16 +13,21 @@
         android:layout_height="wrap_content"
         android:text="PhoneNumber"
         android:id="@+id/textView3"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="208dp"/>
+        app:layout_constraintLeft_toLeftOf="@+id/constraintLayout"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+        android:layout_marginTop="207dp"
+        tools:layout_constraintTop_creator="1"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="password"
         android:text="password"
         app:layout_constraintLeft_toLeftOf="@+id/constraintLayout"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintBottom_toBottomOf="@+id/et_login_password"
         android:layout_marginBottom="8dp"
@@ -31,13 +36,19 @@
 
     <EditText
         android:id="@+id/et_login_password"
-        android:layout_width="231dp"
-        android:layout_height="40dp"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
         android:inputType="text"
         android:hint="请输入密码"
         style="@android:style/Widget.Holo.Light.EditText"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="250dp"/>
+        app:layout_constraintLeft_toLeftOf="@+id/et_login_username"
+        app:layout_constraintTop_toBottomOf="@+id/et_login_username"
+        android:layout_marginTop="15dp"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/constraintLayout"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
 
 
     <EditText
@@ -48,12 +59,12 @@
         android:hint="@string/please_input_number"
         style="@android:style/Widget.Material.EditText"
         app:layout_constraintLeft_toRightOf="@+id/textView3"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintRight_toRightOf="@+id/constraintLayout"
-        android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp"
         tools:layout_constraintRight_creator="1"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView3"
         tools:layout_constraintBaseline_creator="1"/>
@@ -69,6 +80,6 @@
         android:layout_marginStart="38dp"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintTop_toBottomOf="@+id/et_login_password"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="39dp"
         tools:layout_constraintTop_creator="1"/>
 </android.support.constraint.ConstraintLayout>
