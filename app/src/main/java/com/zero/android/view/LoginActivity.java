@@ -2,6 +2,7 @@ package com.zero.android.view;
 
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -44,7 +45,10 @@ public class LoginActivity extends BaseActivity implements LoginConstact.View {
 
     @Override
     public void showLoginError() {
-        Snackbar.make(constraintLayout,"your userName or password error ",Snackbar.LENGTH_LONG).show();
+        Snackbar.make(constraintLayout,"your userName or password error ",Snackbar.LENGTH_LONG)
+                .setAction("you perform setAction()"
+                ,view -> Log.i("TAG","you perform onClick method")).show();
+
     }
 
     @Override
