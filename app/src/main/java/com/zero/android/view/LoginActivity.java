@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import com.zero.android.R;
 import com.zero.android.common.BaseActivity;
+import com.zero.android.common.utils.IntentUtils;
 import com.zero.android.constact.LoginConstact;
 import com.zero.android.present.LoginPresent;
 
@@ -39,7 +40,11 @@ public class LoginActivity extends BaseActivity implements LoginConstact.View {
 
         String userName = etLoginUserName.getText().toString();
         String password = etLoginPassword.getText().toString();
-        btnLogin.setOnClickListener(view -> loginPresent.loginTask(userName,password));
+        btnLogin.setOnClickListener(view -> {
+            loginPresent.loginTask(userName,password);
+            IntentUtils.goListActivity(this,ListActivity.class);
+        });
+
     }
 
 
