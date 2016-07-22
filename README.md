@@ -1,5 +1,5 @@
 # ZFAndroidFramework
-base on android mvp,use rxjava java8 rxAndroid rxbus rxbinding.and a lot of utils.
+base on android mvp,use rxjava java8 rxAndroid rxbus rxbinding.and a lot of utils material design.
 ###Some link
 [retrofit Doc](http://square.github.io/retrofit/)
 
