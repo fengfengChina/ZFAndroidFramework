@@ -3,7 +3,7 @@ package com.zero.android.model;
 import android.util.Log;
 
 import com.zero.android.Api;
-import com.zero.android.common.BaseModel;
+import com.zero.android.common.mvp.BaseModel;
 import com.zero.android.entity.User;
 
 import retrofit2.Retrofit;
@@ -18,7 +18,7 @@ import rx.schedulers.Schedulers;
  * @author zengfeng
  * create on 16/7/6.
  */
-public class LoginModel extends BaseModel{
+public class LoginModel extends BaseModel {
 
     public void login(String userName, String password, OnLoginListner listner){
         Retrofit         retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addCallAdapterFactory(RxJavaCallAdapterFactory.create()).addConverterFactory(GsonConverterFactory.create()).build();

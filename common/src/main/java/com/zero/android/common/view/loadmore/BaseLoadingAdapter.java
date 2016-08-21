@@ -1,4 +1,4 @@
-package com.zero.android.common.view;
+package com.zero.android.common.view.loadmore;
 
 import android.support.v4.util.CircularArray;
 import android.support.v4.view.ViewCompat;

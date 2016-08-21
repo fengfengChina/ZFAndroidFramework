@@ -16,15 +16,7 @@ public class LoginPresent implements LoginConstact.Presenter ,OnLoginListner{
     }
 
 
-    @Override
-    public void subscribe() {
 
-    }
-
-    @Override
-    public void unsubscribe() {
-
-    }
 
     @Override
     public void loginTask(String username, String password) {
