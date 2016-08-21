@@ -1,7 +1,9 @@
 package com.zero.android.view;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.design.widget.Snackbar;
+import android.support.v4.util.CircularArray;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,11 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zero.android.R;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.zero.android.common.view.BaseLoadingAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,9 +34,6 @@ public class ListActivity extends AppCompatActivity {
     @BindView(R.id.rv_list)
     RecyclerView rvList;
 
-    private RecyclerView.Adapter       mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,33 +46,60 @@ public class ListActivity extends AppCompatActivity {
             Snackbar.make(srl,"onRefreshListener",Snackbar.LENGTH_INDEFINITE).show();
         });
         // 设置了这个以后。我们的布局的大小将不会改变
-        rvList.setHasFixedSize(true);
+//        rvList.setHasFixedSize(true);
 
         // 使用一个线性管理器
-        mLayoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         rvList.setLayoutManager(mLayoutManager);
 
         // 指定dataset
-        List<Entity> myDataset = new ArrayList<>();
+        CircularArray<Entity> myDataset = new CircularArray<>();
         for (int i = 0 ; i<10 ; i++ ){
             Entity entity = new Entity("hello beatiful girl ","gril Oh Oh Oh Oh Oh!!!!!!!!!!!!!!!!!!!");
-            myDataset.add(entity);
+            myDataset.addLast(entity);
         }
-        mAdapter = new MyAdapter(myDataset);
-        rvList.setAdapter(mAdapter);
+        DesignLoaderMoreAdapter moreAdapter = new DesignLoaderMoreAdapter(rvList,myDataset);
+        moreAdapter.setOnLoadingListener(()->{
+            Toast.makeText(ListActivity.this,"loading",Toast.LENGTH_SHORT).show();
+            new CountDownTimer(1000, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+                }
+
+                @Override
+                public void onFinish() {
+                    moreAdapter.setLoadingComplete();
+
+                    for (int i = 0 ; i<10 ; i++ ){
+                        Entity entity = new Entity("hello beatiful girl ","gril Oh Oh Oh Oh Oh!!!!!!!!!!!!!!!!!!!");
+                        myDataset.addLast(entity);
+                    }
+                    moreAdapter.notifyDataSetChanged();
+                }
+            }.start();
+        });
+        rvList.setAdapter(moreAdapter);
     }
 
-    public static class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-        private List<Entity> mDataset;
 
-        // 提供每个view 的data item
-        public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class DesignLoaderMoreAdapter extends BaseLoadingAdapter<Entity> {
+
+        private CircularArray<Entity> mDesignItems;
+
+        public DesignLoaderMoreAdapter(RecyclerView recyclerView, CircularArray<Entity> datas) {
+            super(recyclerView, datas);
+
+            mDesignItems = datas;
+        }
+
+        //正常条目
+        public  class DesignViewHolder extends RecyclerView.ViewHolder {
 
             public View layoutView;
             public TextView tvTitle;
-            private ImageView tvImg;
-            private TextView tvContent;
-            public ViewHolder(View v) {
+            public ImageView tvImg;
+            public TextView tvContent;
+            public DesignViewHolder(View v) {
                 super(v);
                 layoutView = v;
                 tvTitle = (TextView) v.findViewById(R.id.tv_title);
@@ -83,44 +108,18 @@ public class ListActivity extends AppCompatActivity {
             }
         }
 
-        // Provide a suitable constructor (depends on the kind of dataset)
-        public MyAdapter(List<Entity> myDataset) {
-            mDataset = myDataset;
+        @Override
+        public RecyclerView.ViewHolder onCreateNormalViewHolder(ViewGroup parent) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(
+                    R.layout.item_list, parent, false);
+            return new DesignViewHolder(view);
         }
 
-        // Create new views (invoked by the layout manager)
         @Override
-        public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                       int viewType) {
-            // create a new view
-            View v = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.item_list, parent, false);
-            TextView  tvTitle = (TextView) v.findViewById(R.id.tv_title);
-            TextView  tvContent = (TextView) v.findViewById(R.id.tv_content);
-            ImageView tvImg = (ImageView) v.findViewById(R.id.tvImg);
-
-
-            //  set the view's size, margins, paddings and layout parameters
-            ViewHolder vh = new ViewHolder(v);
-            return vh;
-        }
-
-        // Replace the contents of a view (invoked by the layout manager)
-        @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-            // - get element from your dataset at this position
-            // - replace the contents of the view with that element
-
-            holder.tvTitle.setText(mDataset.get(position).getTitle());
-            holder.tvContent.setText(mDataset.get(position).getContent());
-//            holder.tvImg.setImageResource(R.drawable.);
-
-        }
-
-        // Return the size of your dataset (invoked by the layout manager)
-        @Override
-        public int getItemCount() {
-            return mDataset.size()+1;
+        public void onBindNormalViewHolder(RecyclerView.ViewHolder holder, int position) {
+            DesignViewHolder viewHolder = (DesignViewHolder)holder;
+            viewHolder.tvTitle.setText(mDesignItems.get(position).getTitle());
+            viewHolder.tvContent.setText(mDesignItems.get(position).getContent());
         }
     }
 
